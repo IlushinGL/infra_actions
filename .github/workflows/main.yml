@@ -62,10 +62,10 @@ jobs:
         host: ${{ secrets.MY_CLOUD_HOST }}
         username: ${{ secrets.MY_CLOUD_USER }}
         key: ${{ secrets.MY_CLOUD_SSH_KEY }}
-        # passphrase: ${{ secrets.MY_CLOUD_PASSPHRASE }}
+        # passphrase: ...
         script: |
           # Выполняет pull образа с DockerHub
-          sudo docker pull ${{ secrets.MY_LOG_IN_DOCKER_HUB }}/igl:latest
+          sudo docker pull ilushingrigory/igl:latest
           #остановка всех контейнеров
           sudo docker stop $(sudo docker ps -aq)
-          sudo docker run --rm -d -p 5001:5000 ${{ secrets.MY_LOG_IN_DOCKER_HUB }}/igl:latest
+          sudo docker run --rm -d -p 5000:5000 ilushingrigory/igl:latest
