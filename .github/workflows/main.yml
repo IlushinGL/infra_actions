@@ -62,7 +62,7 @@ jobs:
         host: ${{ secrets.MY_CLOUD_HOST }}
         username: ${{ secrets.MY_CLOUD_USER }}
         key: ${{ secrets.MY_CLOUD_SSH_KEY }}
-        passphrase: ${{ secrets.MY_CLOUD_PASSPHRASE }}
+        # passphrase: ${{ secrets.MY_CLOUD_PASSPHRASE }}
         script: |
           # Выполняет pull образа с DockerHub
           sudo docker pull ${{ secrets.MY_LOG_IN_DOCKER_HUB }}/igl:latest
